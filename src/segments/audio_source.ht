@@ -11,7 +11,7 @@ class Converter {
         "title": d["title"],
         "artists": [d["author"]],
         "duration": d["duration"],
-        "thumbnail": d["thumbnail"],
+        "thumbnail": "https://i.ytimg.com/vi/${d["id"]}/hqdefault.jpg",
         "externalUri": "https://youtube.com/watch?v=${d["id"]}",
       }.toJson()
     }).toList()
@@ -62,7 +62,7 @@ class AudioSourceEndpoint {
         return {
           "url": stream["url"],
           "container": stream["container"],
-          "type": "lossless",
+          "type": "lossy",
           "codec": "aac",
           "bitrate": stream["bitrate"],
         }.toJson()
